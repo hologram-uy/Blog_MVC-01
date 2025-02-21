@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SitioMVC.Controllers
 {
-    public class ContactoController : Controller
+    public class ContactoController : BaseController
     {
         // GET: Contacto
         public ActionResult Index()

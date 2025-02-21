@@ -114,6 +114,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContactoController.cs" />
     <Compile Include="Controllers\CRUDController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -159,8 +160,11 @@
     <Content Include="Views\CRUD\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Contacto\Index.cshtml" />
-    <Content Include="Views\CRUD\Listado.cshtml" />
     <Content Include="Views\Home\Other.cshtml" />
+    <Content Include="Views\CRUD\Detalle.cshtml" />
+    <Content Include="Views\CRUD\Agregar.cshtml" />
+    <Content Include="Views\CRUD\Editar.cshtml" />
+    <Content Include="Views\CRUD\Eliminar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -170,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

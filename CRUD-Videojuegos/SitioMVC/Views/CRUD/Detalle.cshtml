@@ -1,0 +1,26 @@
+﻿@model SitioMVC.Models.Juegos
+
+@{
+    ViewBag.Title = "Detalles del Juego";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center text-primary">Detalles del Juego</h2>
+
+<div class="container mt-4">
+    <div class="card shadow p-4">
+        <div class="row">
+            <div class="col-md-12">
+                <p><strong>@Html.DisplayNameFor(model => model.Nombre):</strong> @Html.DisplayFor(model => model.Nombre)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.Genero):</strong> @Html.DisplayFor(model => model.Genero)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.Desarrollador):</strong> @Html.DisplayFor(model => model.Desarrollador)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.AnioLanzamiento):</strong> @Html.DisplayFor(model => model.AnioLanzamiento)</p>
+                <p><strong>@Html.DisplayNameFor(model => model.Plataforma):</strong> @Html.DisplayFor(model => model.Plataforma)</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="@Url.Action("Index", "CRUD")" class="btn btn-secondary px-4">Volver al Listado</a>
+        </div>
+    </div>
+</div>

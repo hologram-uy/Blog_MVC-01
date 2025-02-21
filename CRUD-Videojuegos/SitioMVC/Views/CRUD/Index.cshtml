@@ -1,8 +1,43 @@
-﻿
+﻿@model IEnumerable<SitioMVC.Models.Juegos>
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado de Juegos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Listado de Juegos</h2>
+<p>Aquí puedes ver todos los juegos disponibles en nuestra colección.</p>
 
+<p>
+    @Html.ActionLink("Nuevo juego", "Agregar", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Genero)</th>
+            <th>@Html.DisplayNameFor(model => model.Desarrollador)</th>
+            <th>@Html.DisplayNameFor(model => model.AnioLanzamiento)</th>
+            <th>@Html.DisplayNameFor(model => model.Plataforma)</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.Genero)</td>
+                <td>@Html.DisplayFor(modelItem => item.Desarrollador)</td>
+                <td>@Html.DisplayFor(modelItem => item.AnioLanzamiento)</td>
+                <td>@Html.DisplayFor(modelItem => item.Plataforma)</td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" }) |
+                    @Html.ActionLink("Detalle", "Detalle", new { id = item.Id }, new { @class = "btn btn-info btn-sm" }) |
+                    @Html.ActionLink("Eliminar", "Eliminar", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
