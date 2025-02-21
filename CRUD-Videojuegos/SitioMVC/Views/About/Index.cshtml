@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Nosotros";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="header">
+        <h1>Sobre el Proyecto</h1>
+    </div>
+
+    <div class="box">
+        <p>
+            Bienvenido a nuestro CRUD de videojuegos. Este proyecto está diseñado para demostrar
+            cómo implementar paginación con PagedList en un entorno MVC con .NET Framework.
+        </p>
+    </div>
+
+    <div class="flex">
+        <div class="flex-1 box">
+            <h2>🎮 Catálogo de Videojuegos</h2>
+            <p>Explora una lista de videojuegos populares con su respectiva información.</p>
+        </div>
+        <div class="flex-1 box">
+            <h2>📊 Gestión de Reseñas</h2>
+            <p>Los usuarios pueden dejar comentarios y puntuar los juegos.</p>
+        </div>
+        <div class="flex-1 box">
+            <h2>🔍 Búsqueda y Paginación</h2>
+            <p>Implementación de filtros y paginación eficiente para explorar juegos de manera ordenada.</p>
+        </div>
+    </div>
+
+    <div class="text-center mt">
+        <a href="@Url.Action("Index", "Home")" class="button">Volver al Inicio</a>
+    </div>
+</div>

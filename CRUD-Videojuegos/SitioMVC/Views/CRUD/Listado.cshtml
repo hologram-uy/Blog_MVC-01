@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SitioMVC.Models.Juegos>
+
+@{
+    ViewBag.Title = "Listado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listado</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desarrollador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AnioLanzamiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plataforma)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desarrollador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AnioLanzamiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plataforma)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

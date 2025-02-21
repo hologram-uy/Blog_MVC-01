@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Contacto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="header">
+        <h1>Contacto</h1>
+    </div>
+
+    <div class="box">
+        <p>
+            ¿Tienes alguna pregunta o sugerencia sobre nuestro CRUD de videojuegos? No dudes en ponerte en contacto con nosotros.
+        </p>
+    </div>
+
+    <div class="flex">
+        <div class="flex-1 box">
+            <h2>📧 Correo Electrónico</h2>
+            <p>Puedes enviarnos un mensaje a <strong>soporte@videojuegoscrud.com</strong></p>
+        </div>
+        <div class="flex-1 box">
+            <h2>📱 Redes Sociales</h2>
+            <p>Síguenos en nuestras redes sociales para estar al tanto de las novedades.</p>
+        </div>
+        <div class="flex-1 box">
+            <h2>📍 Ubicación</h2>
+            <p>Nuestras oficinas están ubicadas en el centro tecnológico de la ciudad.</p>
+        </div>
+    </div>
+
+    <div class="text-center mt">
+        <a href="@Url.Action("Index", "Home")" class="button">Volver al Inicio</a>
+    </div>
+</div>

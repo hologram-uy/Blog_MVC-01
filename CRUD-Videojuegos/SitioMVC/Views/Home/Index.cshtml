@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="header">
+        <h1>Bienvenido al CRUD de Videojuegos</h1>
+    </div>
+    
+    <div class="box text-center">
+        <p>
+            Administra tu colección de videojuegos de manera sencilla y rápida. Agrega, edita y elimina juegos con facilidad.
+        </p>
+    </div>
+
+    <div class="flex">
+        <div class="flex-1 box text-center">
+            <h2>🎮 Explora Juegos</h2>
+            <p>Consulta la lista de videojuegos y sus detalles.</p>
+            <div style="margin-top: 30px; margin-bottom:30px"><a href="@Url.Action("Other", "Home")" class="button">Ver Juegos</a></div>
+        </div>
+
+        <div class="flex-1 box text-center">
+            <h2>➕ Agregar Nuevo</h2>
+            <p>Registra un nuevo videojuego en nuestra base de datos.</p>
+            <div style="margin-top: 30px; margin-bottom:30px"><a href="@Url.Action("Other", "Home")" class="button">Agregar Juego</a></div>
+        </div>        
+       
+        <div class="flex-1 box text-center">
+            <h2>📄 Acerca de</h2>
+            <p>Conoce más sobre este proyecto y su propósito.</p>            
+            <div style="margin-top: 30px; margin-bottom:30px"><a href="@Url.Action("Index", "About")" class="button">Más Información</a></div>
+        </div>
+    </div>
+</div>
