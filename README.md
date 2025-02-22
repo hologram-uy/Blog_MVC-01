@@ -1,6 +1,6 @@
 # 📌 Blog_MVC-01
 
-## 📄 Paginación con PagedList en un CRUD MVC - .NET Framework
+## 📄 Paginación con X.PagedList en un CRUD MVC - .NET Framework
 
 ¡Bienvenidos a otro repositorio! 🎉 Acá vas a encontrar información sobre la implementación de **paginación** en un CRUD utilizando `X.PagedList` en un proyecto **MVC con .NET Framework**. Este repositorio está diseñado para oficiar de guía, paso a paso, y facilitar la mejora en la presentación de datos en las aplicaciones web.
 
