@@ -1,4 +1,4 @@
-# 📌 Blog_MVC-Pagination
+# 📌 Blog_MVC-01
 
 ## 📄 Paginación con PagedList en un CRUD MVC - .NET Framework
 
