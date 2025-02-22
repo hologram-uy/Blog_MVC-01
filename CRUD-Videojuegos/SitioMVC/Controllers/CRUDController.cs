@@ -4,27 +4,56 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using X.PagedList;
 
 namespace SitioMVC.Controllers
 {
     public class CRUDController : BaseController
     {
-        
+        // Para indicar la cantidad de elementos por página
+        private const int PageSize = 8;
+
         // Listado de Juegos
-        public ActionResult Index(string _nombreJuego)
+        public ActionResult Index(string _nombreJuego, string _filtroActual, int? page)
         {
             try
             {
-                var juegos = db.Juegos.AsNoTracking().ToList();
+                // Si page tiene un valor (!= null), asigna su valor a pageNumber.
+                // Si page es null, asigna 1 a pageNumber (para mostrar la primera página).
+                int pageNumber = page ?? 1;
 
-                if(!string.IsNullOrEmpty(_nombreJuego))
+                // Si hay un filtro, obliga a que la búsqueda empiece en la primera página
+                // cuando el usuario filtra por nombre.
+                if (!string.IsNullOrEmpty(_nombreJuego))
                 {
-                    juegos = juegos.Where(j => j.Nombre.ToLower()
-                                   .StartsWith(_nombreJuego.ToLower()))
-                                   .ToList();
+                    page = 1;
                 }
-                
-                return View(juegos);
+                else
+                {
+                    _nombreJuego = _filtroActual;
+                }
+
+                // Salvamos el filtro actual para no perderlo al cambiar de pag.
+                ViewBag.FiltroActual = _nombreJuego;
+
+                // Definimos la consulta para luego filtrar la lista si es necesario
+                IQueryable<Models.Juegos> juegos =
+                    from j in db.Juegos
+                    select j;
+
+                // Si el usuario filtró por algún juego, filtramos
+                if (!string.IsNullOrEmpty(_nombreJuego))
+                {
+                    string[] palabrasBuscadas = _nombreJuego.ToLower().Split(' ');
+
+                    juegos = juegos.Where(j => palabrasBuscadas.All(palabra => j.Nombre.ToLower().Contains(palabra)));
+                }
+
+                // X.PagedList usa Skip() y Take() para la paginación, y en Entity Framework, Skip() solo se puede usar
+                // en una consulta ordenada (OrderBy() debe estar presente antes de Skip()).
+                juegos = juegos.OrderBy(j => j.Nombre);
+
+                return View(juegos.ToPagedList(pageNumber, PageSize));
             }
             catch (Exception ex)
             {

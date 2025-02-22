@@ -14,5 +14,20 @@ namespace SitioMVC
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
+        protected void Application_Error()
+        {
+            var exception = Server.GetLastError();
+
+            if (exception is HttpException httpException)
+            {
+                if (httpException.GetHttpCode() == 404)
+                {
+                    Response.Clear();
+                    Server.ClearError();
+                    Response.Redirect("~/Error/NotFound");
+                }
+            }
+        }
     }
 }

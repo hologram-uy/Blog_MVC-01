@@ -1,0 +1,30 @@
+﻿/* Espaciado entre los elementos de la paginación */
+.pagination-container .pagination {
+    gap: 5px; /* Espaciado entre los números */
+    display: flex;
+    justify-content: center;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    color: #007bff;
+    background-color: #f8f9fa;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    padding: 6px 12px;
+}
+
+    /* Hover y activo */
+    .pagination .page-link:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+.pagination .active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
