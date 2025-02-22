@@ -5,50 +5,52 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 class="titulo">Agregar Nuevo Juego</h2>
+<h2 class="titulo text-center text-primary">Agregar Nuevo Juego</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-container">
-        <h4>Juegos</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "error-message" })
+    <div class="container w-50">
+        <div class="form-container mx-auto">
+            <h4 class="text-center">Juegos</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "error-message" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "form-label" })
-            @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "error-message" })
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "form-label fw-bold" })
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "error-message" })
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Genero, htmlAttributes: new { @class = "form-label" })
-            @Html.EditorFor(model => model.Genero, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Genero, "", new { @class = "error-message" })
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Genero, htmlAttributes: new { @class = "form-label fw-bold" })
+                @Html.EditorFor(model => model.Genero, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Genero, "", new { @class = "error-message" })
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Desarrollador, htmlAttributes: new { @class = "form-label" })
-            @Html.EditorFor(model => model.Desarrollador, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Desarrollador, "", new { @class = "error-message" })
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Desarrollador, htmlAttributes: new { @class = "form-label fw-bold" })
+                @Html.EditorFor(model => model.Desarrollador, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Desarrollador, "", new { @class = "error-message" })
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AnioLanzamiento, htmlAttributes: new { @class = "form-label" })
-            @Html.EditorFor(model => model.AnioLanzamiento, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.AnioLanzamiento, "", new { @class = "error-message" })
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.AnioLanzamiento, htmlAttributes: new { @class = "form-label fw-bold" })
+                @Html.EditorFor(model => model.AnioLanzamiento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AnioLanzamiento, "", new { @class = "error-message" })
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Plataforma, htmlAttributes: new { @class = "form-label" })
-            @Html.EditorFor(model => model.Plataforma, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Plataforma, "", new { @class = "error-message" })
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Plataforma, htmlAttributes: new { @class = "form-label fw-bold" })
+                @Html.EditorFor(model => model.Plataforma, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Plataforma, "", new { @class = "error-message" })
+            </div>
 
-        <div class="button-group">
-            <input type="submit" value="Agregar" class="btn btn-primary" />
-            @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-outline-secondary" })
+            <div class="button-group text-center mt-3">
+                <input type="submit" value="Agregar" class="btn btn-primary" />
+                @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-outline-secondary" })
+            </div>
         </div>
     </div>
 }

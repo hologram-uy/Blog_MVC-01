@@ -9,24 +9,33 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="navbar">
-            <div class="navbar-brand">Super Games</div>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/CRUD/Index">CRUD</a></li>
-                <li><a href="/About/Index">Nosotros</a></li>
-                <li><a href="/Contacto/Index">Contacto</a></li>
-            </ul>
-        </div>
-
+    <div class="container text-center">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <!-- Agregada la clase mx-auto aquí -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/CRUD/Index">CRUD</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/About/Index">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Contacto/Index">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         <div class="page-content">
             @RenderBody()
         </div>
 
-        <hr />        
+        <hr />
         <div class="footer-content">
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - CRUD VideoJuegos APP</p>
         </div>
 
     </div>

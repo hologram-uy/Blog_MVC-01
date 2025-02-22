@@ -1,12 +1,8 @@
 ﻿using SitioMVC.Models;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Reflection;
-using System.Runtime.Remoting.Contexts;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SitioMVC.Controllers
@@ -15,11 +11,18 @@ namespace SitioMVC.Controllers
     {
         
         // Listado de Juegos
-        public ActionResult Index()
+        public ActionResult Index(string _nombreJuego)
         {
             try
             {
                 var juegos = db.Juegos.AsNoTracking().ToList();
+
+                if(!string.IsNullOrEmpty(_nombreJuego))
+                {
+                    juegos = juegos.Where(j => j.Nombre.ToLower()
+                                   .StartsWith(_nombreJuego.ToLower()))
+                                   .ToList();
+                }
                 
                 return View(juegos);
             }
